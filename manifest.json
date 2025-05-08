@@ -1,0 +1,42 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "§aSimpleBoard §d[NusaRP]",
+        "description": "§bhttps://discord.gg/naRZ8tE3yC §afor more updates and information!",
+        "uuid": "578735e3-35dd-4b2f-807c-48e9dec61eab",
+		"version": [
+			1,
+			0,
+			0
+		],
+        "min_engine_version": [
+            1,
+            20,
+            0
+        ]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "uuid": "0e3bc394-8ed3-42d7-9a93-750e82b3c9e7",
+            "version": "1.0.0"
+        }
+    ],
+    "subpacks": [
+        {
+            "name": "Actionbar Normal",
+            "folder_name": "actionbar",
+            "memory_tier": 0
+        },
+        {
+            "name": "Actionbar [Full Background]",
+            "folder_name": "actionbar_fullbg",
+            "memory_tier": 0
+        }
+    ],
+    "metadata": {
+        "authors": [ "ItzCandra23 (github.com/ItzCandra23)" ],
+        "license": "MIT License",
+        "url": "https://mit-license.org/"
+    }
+}

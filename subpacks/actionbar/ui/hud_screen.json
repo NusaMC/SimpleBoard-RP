@@ -1,0 +1,98 @@
+{
+  "namespace": "hud",
+
+  "anim_sidebar_text_alpha_out": {
+    "anim_type": "alpha",
+    "from": 1.0
+  },
+
+  "anim_sidebar_text_background_alpha_out": {
+    "anim_type": "alpha",
+    "from": 0.5,
+    "to": 0.5
+  },
+
+  "hud_actionbar_text": {
+    "type": "image",
+    "$actionbar_text_string": "$actionbar_text",
+    "$anchor_from": "center",
+    "$anchor_to": "center",
+    "$size": [ "100%c + 12px", "100%c + 5px" ],
+    "$offset": [ 0, "50%-68px" ],
+    "$alpha": "@hud.anim_actionbar_text_background_alpha_out",
+    "variables": [
+      {
+        "requires": "(not (($actionbar_text_string - '§s§i§d§e§b§a§r') = $actionbar_text_string))",
+        "$offset": [ "6px", 0 ],
+        "$alpha": "@hud.anim_sidebar_text_background_alpha_out",
+        "$anchor_from": "right_middle",
+        "$anchor_to": "right_middle"
+      },
+      {
+        "requires": "(not (($actionbar_text_string - '§l§o§g§o') = $actionbar_text_string))",
+        "$offset": [ "6px", 20 ]
+      }
+    ],
+    "anchor_from": "$anchor_from",
+    "anchor_to": "$anchor_to",
+    "size": "$size",
+    "offset": "$offset",
+    "texture": "textures/ui/hud_tip_text_background",
+    "alpha": "$alpha",
+    "controls": [
+      {
+        "main_background": {
+          "type": "label",
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "text": "$actionbar_text_string",
+          "color": "$tool_tip_text",
+          "layer": 31,
+          "offset": [ 0, -2 ],
+          "alpha": "@hud.anim_sidebar_text_alpha_out",
+          "visible": "(not (($actionbar_text_string - '§s§i§d§e§b§a§r') = $actionbar_text_string))",
+          "controls": [
+            {
+              "scoreboard_logo": {
+                "type": "image",
+                "size": [
+                  110,
+                  40
+                ],
+                "offset": [
+                  0,
+                  -45
+                ],
+                "layer": 32,
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "texture": "textures/ui/logo",
+                "visible": "(not (($actionbar_text_string - '§l§o§g§o') = $actionbar_text_string))"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "actionbar_message": {
+          "type": "label",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "color": "$tool_tip_text",
+          "layer": 31,
+          "text": "$actionbar_text",
+          "localize": false,
+          "$alpha": "@hud.anim_actionbar_text_alpha_out",
+          "variables": [
+            {
+              "requires": "(not (($actionbar_text_string - '§s§i§d§e§b§a§r') = $actionbar_text_string))",
+              "$alpha": "@hud.anim_sidebar_text_alpha_out"
+            }
+          ],
+          "alpha": "$alpha",
+          "visible": "(($actionbar_text_string - '§s§i§d§e§b§a§r') = $actionbar_text_string)"
+        }
+      }
+    ]
+  }
+}
